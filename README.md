@@ -9,10 +9,10 @@ Ensure Spark is installed (/opt/spark).
 1. Create HDFS input dir
 
    ```hdfs dfs -mkdir -p /gutenberg```
-3. Get Gutenberg text files
+2. Get Gutenberg text files
 
    ```wget https://www.gutenberg.org/files/<num>/<num>-0.txt```  where <num> is an int of a book
-5. Upload Gutenberg text files
+3. Upload Gutenberg text files
 
     ```hdfs dfs -put ~/gutenberg/*.txt /gutenberg/```
 
@@ -31,7 +31,7 @@ time hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-*.jar 
 time hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-*.jar \ -files char_mapper.py,char_reducer.py \ -input /gutenberg \ -output /output_charcount \ -mapper char_mapper.py \ -reducer char_reducer.py
 ```
 
-5. Run Hadoop Min/max
+4. Run Hadoop Min/max
 
 ```
 time hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-*.jar \ -files minmax_reducer.py \ -input /output_wordcount \ -output /output_minmax \ -mapper /bin/cat \ -reducer minmax_reducer.py

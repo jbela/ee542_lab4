@@ -41,7 +41,7 @@ View results of via ```hdfs dfs -cat /<output_name>/part-*``` or ```hdfs dfs -ca
 
 Outputs can then be cleared via command ```hdfs dfs -rm -r -f /<output_name>```
 
-Two-Node testing can be completed by adding worker to ```/usr/local/hadoop/etc/hadoop/workers``` and ```stop-yarn.sh``` and ```stop-dfs.sh``` and then repeating steps 1-5
+Two-Node testing can be completed by adding worker to ```/usr/local/hadoop/etc/hadoop/workers``` and ```stop-yarn.sh``` and ```stop-dfs.sh``` and then repeating steps 1-4
 
 ### Spark
 1. Run Word Count
@@ -60,7 +60,7 @@ View results of via ```hdfs dfs -cat /<output_name>/part-*``` or ```hdfs dfs -ca
 
 Outputs can then be cleared via command ```hdfs dfs -rm -r -f /<output_name>```
 
-Two-Node testing can be completed by adding worker to ```/usr/local/hadoop/etc/hadoop/workers``` and ```stop-yarn.sh``` and ```stop-dfs.sh``` and then repeating steps 1-5, but REPLACE ```--master local[*]```   with ```-- master spark://master:7077```
+Two-Node testing can be completed by adding worker to ```/usr/local/hadoop/etc/hadoop/workers``` and ```stop-yarn.sh``` and ```stop-dfs.sh``` and then repeating steps 1-3, but REPLACE ```--master local[*]```   with ```-- master spark://master:7077```
 
 
 ### Other useful Commands
